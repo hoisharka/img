@@ -5,70 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <style>
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-      }
-      .wrapper{
-        position: relative;
-      }
-
-      .dummy{
-        width: 100%;
-      }
-      .poster {
-        width: 100%;
-      }
-      .poster-link {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 300px;
-        height: 100px;
-        z-index: 10;
-      }
-    </style>
   </head>
-  <script>
-    function onload(){
-      console.log("onload")
-      setButton();
-    }
-
-    function setButton(){
-      var poster = document.querySelector("#poster");
-      var posterHeight=4412 // 포스터 높이, posterWidth와 비율만 맞으면 됨.
-      var posterWidth=683  // 포스터 넓이, posterHeight와 비율만 맞으면 됨.
-      var buttonTop=3355; // 버튼 상단 좌표
-      var buttonLeft=212; // 버튼 좌측 좌표
-      var buttonHeight = 80;
-      var buttonWidth = 250;
-      var left = poster.offsetWidth * buttonLeft/posterWidth;
-      var top = poster.offsetHeight * buttonTop/posterHeight;
-      var width = poster.offsetWidth * buttonWidth/posterWidth;
-      var height = poster.offsetHeight * buttonHeight/posterHeight;
-
-      document.querySelector("#posterLink").style.top = top + 'px';
-      document.querySelector("#posterLink").style.left = left + 'px';
-      document.querySelector("#posterLink").style.width = width + 'px';
-      document.querySelector("#posterLink").style.height = height + 'px';
-      console.log("style: ", document.querySelector("#posterLink").style.top);
-      console.log("style: ", document.querySelector("#posterLink").style.left);
-      console.log("style: ", document.querySelector("#posterLink").style.width);
-      console.log("style: ", document.querySelector("#posterLink").style.height);
-    }
-
-    window.addEventListener('resize', setButton);
-  </script>
-  <body onload="onload()">
-    <div class="wrapper">
-      <img id="poster" class="poster" src="poster.jpg" />
-      <div class="dummy"></div>
-      <a id="posterLink" class="poster-link" target="_blank" href="https://www.onoffmix.com/event/194417"></a>
+  
+  <body>
+    <div class="wrapper" style="position: relative;">
+      <img id="poster" class="poster" src="https://github.com/hoisharka/img/blob/master/poster.jpg?raw=true" style="width:850px"/>
+      <a id="posterLink" class="poster-link" target="_blank" href="https://www.onoffmix.com/event/194417"
+      style="position: absolute;top: 0px;left: 0px;width: 300px;height: 100px;z-index: 10; background:red"></a>
     </div>
     
   </body>
